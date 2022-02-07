@@ -15,3 +15,7 @@ choco
 
 Step3
 https://www.jfrog.com/confluence/display/JFROG/Installing+Artifactory#InstallingArtifactory-HelmInstallation
+
+Step4 
+
+choco install kubernetes-helm
