@@ -22,3 +22,7 @@ choco install kubernetes-helm
 
 Step5
 choco install openssl
+
+Step6
+https://indy.fulgan.com/SSL/
+https://slproweb.com/products/Win32OpenSSL.html
