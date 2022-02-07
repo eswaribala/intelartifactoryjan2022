@@ -19,3 +19,6 @@ https://www.jfrog.com/confluence/display/JFROG/Installing+Artifactory#Installing
 Step4 
 
 choco install kubernetes-helm
+
+Step5
+choco install openssl
