@@ -26,3 +26,10 @@ choco install openssl
 Step6
 https://indy.fulgan.com/SSL/
 https://slproweb.com/products/Win32OpenSSL.html
+
+
+Scaling pods
+kubectl expose deployment --port 7070 customerapp --type=LoadBalancer --name=customerservicev1
+kubectl port-forward svc/customerservicev1 8060:7070
+kubectl scale --replicas=1 deployment customerapp
+kubectl autoscale deployment customerapp --min=1 --max=4 --cpu-percent=20
