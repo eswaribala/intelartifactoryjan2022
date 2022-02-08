@@ -15,3 +15,5 @@ fluent-gem install fluent-plugin-elasticsearch
 
 wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
 https://phoenixnap.com/kb/install-helm
+
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-git-clone-on-Ubuntu-with-GitLab-and-GitHub
