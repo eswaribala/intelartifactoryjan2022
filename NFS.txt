@@ -1,1 +1,2 @@
 https://levelup.gitconnected.com/how-to-use-nfs-in-kubernetes-cluster-storage-class-ed1179a83817
+https://linuxize.com/post/how-to-install-and-configure-an-nfs-server-on-ubuntu-20-04/
