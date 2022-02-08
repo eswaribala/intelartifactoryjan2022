@@ -1,0 +1,14 @@
+<match jfrog.**>
+  @type elasticsearch
+  @id elasticsearch
+  host localhost
+  port 7074
+  user "elastic"
+  password vignesh
+  index_name unified-artifactory
+  include_tag_key true
+  type_name fluentd
+  logstash_format false
+</match>
+
+fluent-gem install fluent-plugin-elasticsearch
