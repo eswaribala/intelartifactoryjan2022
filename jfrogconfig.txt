@@ -1,1 +1,13 @@
-helm install  --set artifactory.resources.requests.cpu="500m" --set artifactory.resources.limits.cpu="2" --set artifactory.resources.requests.memory="1Gi" --set artifactory.resources.limits.memory="4Gi" --set artifactory.javaOpts.xms="1g" --set artifactory.javaOpts.xmx="4g" --set nginx.resources.requests.cpu="100m" --set nginx.resources.limits.cpu="250m" --set nginx.resources.requests.memory="250Mi"  --set nginx.resources.limits.memory="500Mi" --set artifactory.persistence.type=azure-blob -set artifactory.persistence.azureBlob.accountName=xxx --set artifactory.persistence.azureBlob.accountKey=  --set artifactory.persistence.azureBlob.endpoint= --set artifactory.persistence.azureBlob.containerName= --generate-name jfrog/artifactory
+Go to azure , create virtual network
+Create Storage Account
+Create Premium Account
+
+Choose blob
+
+Then pickup identity
+
+
+
+helm install  --set artifactory.resources.requests.cpu="500m" --set artifactory.resources.limits.cpu="2" --set artifactory.resources.requests.memory="1Gi" --set artifactory.resources.limits.memory="4Gi" --set artifactory.javaOpts.xms="1g" --set artifactory.javaOpts.xmx="4g" --set nginx.resources.requests.cpu="100m" --set nginx.resources.limits.cpu="250m" --set nginx.resources.requests.memory="250Mi"  --set nginx.resources.limits.memory="500Mi" --set artifactory.persistence.type=azure-blob --set artifactory.persistence.azureBlob.accountName=vebact --set artifactory.persistence.azureBlob.accountKey=<XQ30TtzsvwyD2gYnu7VahP7DJDRPy5wIsKNbCggKo02/OlQNRZq1MpstxoY2Dwi/ByysTeg6Mrk4+ASt4ZP>
+  --set artifactory.persistence.azureBlob.endpoint=<https://vebact.core.windows.net> --set artifactory.persistence.azureBlob.containerName=<$logs>
+--generate-name jfrog/artifactory
