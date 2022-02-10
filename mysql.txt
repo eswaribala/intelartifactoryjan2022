@@ -1,10 +1,15 @@
 helm install --set postgresql.enabled=false  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set database.driver=com.mysql.cj.jdbc.Driver --set database.user=root --set database.password=password   --generate-name jfrog/artifactory
 
 mvn dependency:get -Ddest=./ -Dartifact=org.apache.hive:hive-common:2.1.1
+
+helm install my-release --set auth.rootPassword=secretpassword,auth.database=app_database  bitnami/mysql
+kubectl run my-release-mysql-client --rm --tty -i --restart='Never' --image  docker.io/bitnami/mysql:8.0.28-debian-10-r0 --namespace default --command -- bash
+
 openssl rand -hex 32
 set MASTER_KEY=bd2e20fd40b414575d716d5e3d760f6d3edece645a036d7e229a8461bf52268f
-kubectl create secret generic my-masterkey-secret --from-literal=master-key=${MASTER_KEY}
-kubectl create secret generic my-joinkey-secret  --from-literal=join-key=${JOIN_KEY}
+kubectl create secret generic my-masterkey-secret --from-literal=master-key=%MASTER_KEY%
+kubectl create secret generic my-joinkey-secret  --from-literal=join-key=%JOIN_KEY%
 
  helm install --set postgresql.enabled=false --set artifactory.preStartCommand=`wget -O /opt/jfrog/artifactory/tomcat/lib/mysql-connector-java-5.1.41.jar https://jcenter.bintray.com/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar`  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set artifactory.masterKey=%MASTER_KEY% --set artifactory.joinKey=%JOIN_KEY%  --set database.user=root --set database.password=password  --generate-name jfrog/artifactory
 
+helm install --set postgresql.enabled=false --set artifactory.preStartCommand=`wget -O /opt/jfrog/artifactory/tomcat/lib/mysql-connector-java-5.1.41.jar https://jcenter.bintray.com/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar`  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set artifactory.masterKey=%MASTER_KEY% --set artifactory.joinKey=%JOIN_KEY%  --set database.user=root --set database.password=secretpassword  --generate-name jfrog/artifactory
