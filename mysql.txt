@@ -1,7 +1,7 @@
 helm install --set postgresql.enabled=false  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set database.driver=com.mysql.cj.jdbc.Driver --set database.user=root --set database.password=password   --generate-name jfrog/artifactory
 
 mvn dependency:get -Ddest=./ -Dartifact=org.apache.hive:hive-common:2.1.1
-
+helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install my-release --set auth.rootPassword=secretpassword,auth.database=app_database  bitnami/mysql
 kubectl run my-release-mysql-client --rm --tty -i --restart='Never' --image  docker.io/bitnami/mysql:8.0.28-debian-10-r0 --namespace default --command -- bash
 
