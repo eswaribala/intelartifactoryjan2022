@@ -1,0 +1,1 @@
+helm install --set postgresql.enabled=false  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set database.driver=com.mysql.cj.jdbc.Driver --set database.user=root --set database.password=password   --generate-name jfrog/artifactory
