@@ -1,7 +1,7 @@
 GitRepo:                                            # Required.
   name: jfrogGitRepo                                  # Name of the GitRepo resource. Defaults to GitRepoRes.
   gitProvider: productapi                              # Required. Name of the SCM integration which will be used to fetch the SCM. repository.
-  path: eswaribala/intelartifactoryjan2022projects  # Required. Path to the SCM repository.
+  path: eswaribala/intelartifactoryjan2022 # Required. Path to the SCM repository.
   branches:
     exclude: 'master'                               # Regex pattern to exclude branches.
     include: ^{{gitBranch}}$                        # Regex pattern to include branches.
