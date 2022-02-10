@@ -1,9 +1,9 @@
 GitRepo:                                            # Required.
   name: jfrogGitRepo                                  # Name of the GitRepo resource. Defaults to GitRepoRes.
-  gitProvider: productapi                              # Required. Name of the SCM integration which will be used to fetch the SCM. repository.
+  gitProvider: jfroglabdevintegration                            # Required. Name of the SCM integration which will be used to fetch the SCM. repository.
   path: eswaribala/intelartifactoryjan2022 # Required. Path to the SCM repository.
   branches:
     exclude: 'master'                               # Regex pattern to exclude branches.
     include: ^{{gitBranch}}$                        # Regex pattern to include branches.
  
-artifactoryIntegration: productapi                        # Required. Name of the artifactory integration using which the docker image will be pushe
+artifactoryIntegration: jfroglabdevintegration                         # Required. Name of the artifactory integration using which the docker image will be pushe
