@@ -1,3 +1,7 @@
 helm install --set postgresql.enabled=false  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set database.driver=com.mysql.cj.jdbc.Driver --set database.user=root --set database.password=password   --generate-name jfrog/artifactory
 
 mvn dependency:get -Ddest=./ -Dartifact=org.apache.hive:hive-common:2.1.1
+
+
+ helm install --set postgresql.enabled=false --set artifactory.preStartCommand="wget -O /opt/jfrog/artifactory/tomcat/lib/mysql-connector-java-5.1.41.jar https://jcenter.bintray.com/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar"  --set database.type=mysql  --set database.host=localhost --set database.port=3306 --set database.url="jdbc:mysql://mysql:3306/testdb?useSSL=true&&serverTimezone=UTC" --set database.driver=com.mysql.cj.jdbc.Driver   --set database.user=root --set database.password=password  --generate-name jfrog/artifactory
+
