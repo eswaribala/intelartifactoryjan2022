@@ -1,4 +1,4 @@
-docker run --name mysql8 -v /tmp/database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=artifactory -e MYSQL_USER=artifactory -e MYSQL_PASSWORD=artifact123 -d mysql
+docker run --name mysql8 -v /tmp/database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=artifactory -e MYSQL_USER=artifactory -e MYSQL_PASSWORD=artifact123 -d mysql
 docker volume create artifactory-data
 
 docker pull releases-docker.jfrog.io/jfrog/artifactory-pro:latest
