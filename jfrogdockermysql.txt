@@ -13,3 +13,12 @@ driver: com.mysql.jdbc.Driver
 url: jdbc:mysql://mysql:3306/artdb?characterEncoding=UTF-8&elideSetAutoCommits=true&useSSL=false
 username: root
 password: my-secret-pw
+
+
+cd /tmp
+$ wget https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-8.0.26.tar.gz
+$ tar -zxvf mysql-connector-java-8.0.26.tar.gz
+$ cp mysql-connector-java-8.0.26.jar /opt/artifactory-pro-7.23.3/var/bootstrap/artifactory/tomcat/lib/
+
+
+
